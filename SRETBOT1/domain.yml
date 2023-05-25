@@ -1,0 +1,56 @@
+version: '3.1'
+intents:
+- affirm
+- ask_about_arrear
+- ask_about_courses
+- ask_about_fees_general
+- ask_about_fees_speific
+- bot_challenge
+- deny
+- give_interested_course
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+entities:
+- interested_course
+slots:
+  interested_course:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: interested_course
+responses:
+  utter_greet:
+  - text: Hey! How can I help you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_info_about_arrear:
+  - text: Don't worry if you have an arrear or two. You can clear them by next year. As of for when to clear the said arrears. If you have an arrear from an Odd Semester; you have to clear it on an odd semester. If the arrea was in even semester; then you have to clear it on even semester. As of for the exact dates, it will announced by the prof.
+  utter_basic_info__course:
+  - text: We offer 4 Courses in BTech; AIML, AIDA, CybSec&IOT, MedicalSci. In BSc, there are 3; AIDA(HONS), Bioinfomatics, DA.
+  utter_ask_interested_course:
+  - text: Do you have any specific course in mind?
+  utter_specific_fees:
+  - text: f"<insert specific fees of> {interested_course}"
+  utter_general_fees:
+  - text: 'btech: 2,50,000 Rs per year. The course is for 4 Years ; bsc: 75,000 Rs per year. The course 3 years (4 years if hons)'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_ask_interested_course
+- Action_explain_specific_fees
+- utter_general_fees
+- utter_basic_info__course
+- utter_specific_fees

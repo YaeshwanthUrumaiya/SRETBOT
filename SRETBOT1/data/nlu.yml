@@ -1,0 +1,120 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_about_courses
+  examples: |
+    - what are all the courses offered
+    - what courses are there in this college
+    - what courses are handled by this college
+    - list of courses of this college
+    - give me a list of all the courses.
+    - tell me about all the courses in this college
+    - can you all of the courses in this college?
+- intent: ask_about_arrear
+  examples: |
+    - I have an arrear what should i do
+    - how to clear arrears
+    - when will the arrear exam be
+- intent: ask_about_fees_general
+  examples: |
+    - what is the fees structure?
+    - what is the general fees of the college?
+    - what is the fees structure like?
+    - tell me about the fees
+    - what is the fees structure of [aiml]{"entity": "interested_course", "value": "AIML"}?
+    - tell me about the fees structure?
+    - what is the fees structure of [AiDa]{"entity": "interested_course", "value": "AIDA"}?
+    - what is the fees structure of [medsci]{"entity": "interested_course", "value": "MedSci"}?
+- intent: ask_about_fees_speific
+  examples: |
+    - what is the fees of Btech [AIML](interested_course)
+    - what is the fees of [AIDA](interested_course) in BSc
+    - can you fees of btech [AIML](interested_course)?
+    - [aiml]{"entity": "interested_course", "value": "AIML"}
+- intent: give_interested_course
+  examples: |
+    - yes, i am intersted in Btech [AIML](interested_course)
+    - BTech [CybSec](interested_course)
+    - Btech [MedSci](interested_course)
+    - [AIDA](interested_course) btech

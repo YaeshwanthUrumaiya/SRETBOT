@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: enquiry about arrear
+  steps:
+  - intent: ask_about_arrear
+  - action: utter_info_about_arrear
+
+- story: Enquiry about course (basic and asked fees general and gave specific course)
+  steps: 
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_course
+  - intent: give_interested_course
+  - action: Action_explain_specific_fees #make this an action
+
+- story: Enquiry about course (basic and asked fees general and didn't give specific course)
+  steps: 
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_course
+  - intent: deny
+  - action: utter_general_fees 
+
+- story: enquiry about course (basic and asked fees specific)
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - intent: ask_about_fees_speific
+  - action: Action_explain_specific_fees
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_course
+  - intent: give_interested_course
+    entities:
+    - interested_course: Bioinfomatics
+  - action: Action_explain_specific_fees
+
+- story: interactive_story_2
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - intent: ask_about_courses
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_course
+  - intent: deny
+  - action: utter_general_fees
