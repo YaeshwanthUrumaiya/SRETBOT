@@ -10,8 +10,17 @@ intents:
 - give_interested_course
 - goodbye
 - greet
+- internship_assistance
+- internship_competition
+- internship_duration
+- internship_programs
+- internship_requirements
+- internship_timing
+- internship_types
 - mood_great
 - mood_unhappy
+- paid_internships
+- previous_companies
 entities:
 - interested_course
 slots:
@@ -41,16 +50,37 @@ responses:
   - text: We offer 4 Courses in BTech; AIML, AIDA, CybSec&IOT, MedicalSci. In BSc, there are 3; AIDA(HONS), Bioinfomatics, DA.
   utter_ask_interested_course:
   - text: Do you have any specific course in mind?
-  utter_specific_fees:
-  - text: f"<insert specific fees of> {interested_course}"
   utter_general_fees:
   - text: 'btech: 2,50,000 Rs per year. The course is for 4 Years ; bsc: 75,000 Rs per year. The course 3 years (4 years if hons)'
+  utter_explain_internship_general:
+  - text: reply to intent_internship_types
+  utter_explain_internship_payment:
+  - text: reply to intent_internship_paid
+  utter_explain_internship_duration:
+  - text: reply to intent_internship_duration
+  utter_explain_previous_companies:
+  - text: reply to intent_previous_companies
+  utter_explain_internship_requirements:
+  - text: reply to intent_internship_requirements
+  utter_explain_internship_assistance:
+  - text: reply to intent_internship_assistance
+  utter_explain_internship_programs:
+  - text: reply to intent_internship_programs
+  utter_explain_internship_timing:
+  - text: reply to intent_internship_timing
+  utter_explain_internship_competition:
+  - text: reply to intent_internship_competition
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
+- utter_explain_internship_general
+- utter_explain_internship_competition
+- utter_explain_internship_duration
+- utter_explain_previous_companies
+- utter_explain_internship_assistance
+- utter_explain_internship_payment
 - utter_ask_interested_course
 - Action_explain_specific_fees
 - utter_general_fees
 - utter_basic_info__course
-- utter_specific_fees

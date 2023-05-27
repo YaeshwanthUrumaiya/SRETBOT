@@ -58,6 +58,51 @@ stories:
   - intent: ask_about_fees_speific
   - action: Action_explain_specific_fees
 
+- story: enquiry about internship_competition
+  steps:
+  - intent: internship_competition
+  - action: utter_explain_internship_competition
+
+- story: enquiry about internship_timing
+  steps:
+  - intent: internship_timing
+  - action: utter_explain_internship_timing
+
+- story: enquiry about internship_programs
+  steps: 
+  - intent: internship_programs
+  - action: utter_explain_internship_programs
+
+- story: enquiry about internship_assistance
+  steps:
+  - intent: internship_assistance
+  - action: utter_explain_internship_assistance
+
+- story: enquiry about internship_requirements
+  steps:
+  - intent: internship_requirements
+  - action: utter_explain_internship_requirements
+
+- story: enquiry about previous_companies
+  steps:
+  - intent: previous_companies
+  - action: utter_explain_previous_companies
+
+- story: enquiry about internship_duration
+  steps:
+  - intent: internship_duration
+  - action: utter_explain_internship_duration
+
+- story: enquiry about internship_payment
+  steps:
+  - intent: paid_internships
+  - action: utter_explain_internship_payment
+
+- story: enquiry about internship_general
+  steps:
+  - intent: internship_types
+  - action: utter_explain_internship_general
+  
 - story: interactive_story_1
   steps:
   - intent: ask_about_courses
@@ -78,3 +123,21 @@ stories:
   - action: utter_ask_interested_course
   - intent: deny
   - action: utter_general_fees
+
+- story: interactive_story_1
+  steps:
+  - intent: internship_types
+  - action: utter_explain_internship_general
+  - intent: paid_internships
+  - action: utter_explain_internship_payment
+  - intent: internship_assistance
+  - intent: internship_duration
+  - action: utter_explain_internship_duration
+  - intent: previous_companies
+  - action: utter_explain_previous_companies
+  - intent: ask_about_arrear
+  - intent: internship_competition
+  - action: utter_explain_internship_competition
+  - intent: nlu_fallback
+  - intent: internship_assistance
+  - action: utter_explain_internship_assistance

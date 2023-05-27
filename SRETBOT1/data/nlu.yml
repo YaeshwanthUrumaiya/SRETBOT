@@ -118,3 +118,82 @@ nlu:
     - BTech [CybSec](interested_course)
     - Btech [MedSci](interested_course)
     - [AIDA](interested_course) btech
+- intent: internship_types
+  examples: |
+    - What are the different types of internships available in this college?
+    - Can you tell me about the internship options?
+    - What areas do the internships cover?
+    - Are there specific departments for internships on this college?
+    - Can you provide details about the internship programs from this college?
+    - what kind of internship is offere in this college?
+    - can you tell me about the internships in this college?
+- intent: paid_internships
+  examples: |
+    - Are the internships paid?
+    - Do you offer paid internships?
+    - Are there any stipends for the internships in this college?
+    - How much do interns get paid?
+    - Are there any financial benefits for interns?
+    - are the internships paid?
+- intent: internship_duration
+  examples: |
+    - What is the duration of the internship programs in this college?
+    - How long do the internships usually last?
+    - Are there both short-term and long-term internships?
+    - Can I choose the duration of my internship in this college?
+    - Do internships vary in length based on the department?
+    - how many sems does the internship go for?
+- intent: previous_companies
+  examples: |
+    - Which organizations have students from this college interned at in the past?
+    - Can you provide examples of companies where students from this college have interned?
+    - Are there any renowned companies that students have interned with?
+    - Can you give me some names of companies that offer internships in this college?
+    - What are some notable industry partnerships for internships?
+    - what kind of companies gives internships in this college?
+- intent: internship_requirements
+  examples: |
+    - What are the eligibility criteria for internships?
+    - Are there any specific qualifications required for internships?
+    - Do I need prior experience for internships in this college?
+    - Are there any academic requirements for internships?
+    - What skills are preferred for internship applicants in this college?
+    - what cgpa should i have to get an internship?
+- intent: internship_assistance
+  examples: |
+    - How does the college assist students in finding internships?
+    - Is there a dedicated internship placement office in this college?
+    - Are there career services available for internship support in this college?
+    - Do you provide guidance in the internship application process in this college?
+    - Can the college help with resume preparation for internships?
+    - will the college offer the internship?
+- intent: internship_programs
+  examples: |
+    - Are there any specialized internship programs in this college?
+    - Does this college have industry-specific internship initiatives?
+    - Are there any collaborative internship programs with other institutions?
+    - Can this college tell me about any unique internship programs offered?
+    - Are there research-based internship opportunities?
+- intent: internship_timing
+  examples: |
+    - When are the internships typically offered in this college?
+    - Are internships available during summer?
+    - Do internships align with the academic calendar?
+    - Can I do an internship during my winter break?
+    - Are there internships available throughout the year?
+- intent: internship_competition
+  examples: |
+    - How competitive are the internships?
+    - Are internships highly sought after?
+    - Is there a limited number of internship positions available in this college?
+    - Are there any selection processes for internships?
+    - What is the acceptance rate for internships from this college?
+- synonym: AIML
+  examples: |
+    - aiml
+- synonym: AIDA
+  examples: |
+    - AiDa
+- synonym: MedSci
+  examples: |
+    - medsci
