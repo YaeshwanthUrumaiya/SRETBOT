@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-interested_course",
+      "2": "I-interested_course",
+      "3": "L-interested_course",
+      "4": "U-interested_course",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-interested_course": 1,
+      "I-interested_course": 2,
+      "L-interested_course": 3,
+      "U-interested_course": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

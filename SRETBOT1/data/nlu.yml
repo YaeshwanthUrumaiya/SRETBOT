@@ -1,4 +1,5 @@
 version: "3.1"
+#add a uniform , portions (sem division) and the laptop rule (mention wifi as well)
 nlu:
 - intent: greet
   examples: |
@@ -84,6 +85,7 @@ nlu:
     - am I talking to a human?
 - intent: ask_about_courses
   examples: |
+    - how many programmes?
     - what are all the courses offered
     - what courses are there in this college
     - what courses are handled by this college
@@ -91,6 +93,49 @@ nlu:
     - give me a list of all the courses.
     - tell me about all the courses in this college
     - can you all of the courses in this college?
+    - what are the available courses?
+    - what courses does this college offer?
+    - what are the course options in this college?
+    - what majors are available at this institution?
+    - list all the courses provided by this college.
+    - can you give me a rundown of the courses offered here?
+    - tell me about the course offerings in this college.
+    - what study programs does this college have?
+    - give me information about the courses available.
+    - what fields of study are covered by this college?
+    - what educational programs are available here?
+    - provide me with a list of courses in this college.
+    - what disciplines can I study at this college?
+    - what subjects are taught in this institution?
+    - tell me all the courses that are handled by this college.
+    - what are the areas of study in this college?
+    - what are the available degree programs?
+    - list the courses provided by this college.
+    - what are the academic programs in this college?
+    - what are the study options available at this institution?
+    - give me details about the courses offered here.
+    - what are the courses of study at this college?
+    - what are the course offerings in this institution?
+    - tell me about the majors offered by this college.
+    - what programs can I pursue at this college?
+    - give me an overview of the available courses.
+    - what subjects can I choose from in this college?
+    - what are the fields of specialization in this institution?
+    - provide me with a comprehensive list of courses in this college.
+    - what are the educational opportunities in this institution?
+    - what courses can I enroll in at this college?
+    - give me information about the study programs available.
+    - what areas of knowledge does this college cover?
+    - what are the course options at this institution?
+    - list all the academic programs provided by this college.
+    - what are the available majors in this college?
+    - what are the courses taught in this institution?
+    - tell me about the study opportunities in this college.
+    - what degree programs are available here?
+    - give me a list of courses of study in this college.
+    - what are the areas of specialization in this institution?
+    - tell me about courses?
+    - tell me about the courses in this college?
 - intent: ask_about_arrear
   examples: |
     - I have an arrear what should i do
@@ -102,24 +147,49 @@ nlu:
     - what is the general fees of the college?
     - what is the fees structure like?
     - tell me about the fees
-    - what is the fees structure of [aiml]{"entity": "interested_course", "value": "AIML"}?
     - tell me about the fees structure?
-    - what is the fees structure of [AiDa]{"entity": "interested_course", "value": "AIDA"}?
-    - what is the fees structure of [medsci]{"entity": "interested_course", "value": "MedSci"}?
+    - what is the fees?
+    - tell me the fees
 - intent: ask_about_fees_speific
   examples: |
-    - what is the fees of Btech [AIML](interested_course)
-    - what is the fees of [AIDA](interested_course) in BSc
-    - can you fees of btech [AIML](interested_course)?
-    - [aiml]{"entity": "interested_course", "value": "AIML"}
+    - what are the fees for BTech [AIML](interested_course)?
+    - can you tell me the fees for BTech [cybsec](interested_course)?
+    - how much does the BSc [Bioinformatics](interested_course) course cost?
+    - what are the fees for BTech in [AIML](interested_course)?
+    - what is the cost of studying B.Sc. [aida](interested_course)?
+    - can you provide details about the fees for BTech in [cybsec](interested_course)?
+    - what is the fee structure for B.Sc. [AIDA](interested_course) program?
+    - what are the charges for B.Sc. [DA](interested_course) program?
+    - what is the fee structure for BTech [medsci](interested_course) course?
+    - how much does the BSc in [Bioinfomatics](interested_course) cost?
+    - can you tell me the fees for BTech [aiml](interested_course)?
+    - what are the charges for B.Sc. [aida](interested_course) program?
+    - what is the fee structure for BTech in [cybsec](interested_course)?
+    - how much does the BSc [da](interested_course) course cost?
+    - what are the fees for BTech [AIML](interested_course) program?
+    - what is the cost of studying B.Sc. [AIDA](interested_course)?
+    - what are the charges for B.Sc. [DA](interested_course) course?
+    - what is the fee structure for BTech in [medsci](interested_course)?
+    - how much does the BSc in [Bioinformatics](interested_course) cost?
+    - can you tell me the fees for BTech [AIML](interested_course)?
+    - what are the fees for B.Sc. [aida](interested_course) program?
+    - how much does the BSc [Bioinfomatics](interested_course) course cost?
+    - what are the charges for B.Sc. [da](interested_course) program?
+    - what is the fee structure for BTech in [medsci](interested_course) course?
+    - what are the fees for B.Sc. [AIDA](interested_course) program?
+    - what is the fee structure for BTech [cybsec](interested_course)?
 - intent: give_interested_course
   examples: |
     - yes, i am intersted in Btech [AIML](interested_course)
     - BTech [CybSec](interested_course)
     - Btech [MedSci](interested_course)
     - [AIDA](interested_course) btech
+    - [aiml]{"entity": "interested_course", "value": "AIML"}
+    - [aiml]{"entity": "interested_course", "value": "AIML"}
+    - [medicalscience]{"entity": "interested_course", "value": "medical science"}
 - intent: internship_types
   examples: |
+    - what internships are offered in this college?
     - What are the different types of internships available in this college?
     - Can you tell me about the internship options?
     - What areas do the internships cover?
@@ -135,6 +205,7 @@ nlu:
     - How much do interns get paid?
     - Are there any financial benefits for interns?
     - are the internships paid?
+    - are they paid?
 - intent: internship_duration
   examples: |
     - What is the duration of the internship programs in this college?
@@ -143,8 +214,14 @@ nlu:
     - Can I choose the duration of my internship in this college?
     - Do internships vary in length based on the department?
     - how many sems does the internship go for?
+    - how long do they last?
 - intent: previous_companies
   examples: |
+    - what are internal internship?
+    - what is external internship?
+    - are the internships good?
+    - is the internships any good?
+    - how good is the internships in this college?
     - Which organizations have students from this college interned at in the past?
     - Can you provide examples of companies where students from this college have interned?
     - Are there any renowned companies that students have interned with?
@@ -159,14 +236,17 @@ nlu:
     - Are there any academic requirements for internships?
     - What skills are preferred for internship applicants in this college?
     - what cgpa should i have to get an internship?
+    - what grades should i have to be selected?
 - intent: internship_assistance
   examples: |
+    - what does the college does to help the students get internships?
     - How does the college assist students in finding internships?
     - Is there a dedicated internship placement office in this college?
     - Are there career services available for internship support in this college?
     - Do you provide guidance in the internship application process in this college?
     - Can the college help with resume preparation for internships?
     - will the college offer the internship?
+    - how will the college help in this process?
 - intent: internship_programs
   examples: |
     - Are there any specialized internship programs in this college?
@@ -176,6 +256,8 @@ nlu:
     - Are there research-based internship opportunities?
 - intent: internship_timing
   examples: |
+    - In which term will the internship be?
+    - which quarter is the internship
     - When are the internships typically offered in this college?
     - Are internships available during summer?
     - Do internships align with the academic calendar?
@@ -188,12 +270,194 @@ nlu:
     - Is there a limited number of internship positions available in this college?
     - Are there any selection processes for internships?
     - What is the acceptance rate for internships from this college?
+    - is it hard to get internships?
+- intent: entrance_exam_format
+  examples: |
+    - do you know the formate of the exam
+    - How is the entrance exam structured?
+    - What is the format of the entrance exam?
+    - Can you explain the structure of the entrance exam?
+    - What can I expect in the entrance exam?
+    - Is there any negative marking in the entrance exam?
+    - Do I lose marks for incorrect answers in the entrance exam?
+    - How is the scoring pattern in the entrance exam?
+    - Are there any penalties for wrong answers in the entrance exam?
+    - what is the marking scheme of the exam?
+    - what is the blue print of the exam?
+- intent: entrance_exam_subjects
+  examples: |
+    - what is the portions for the entrance exam?
+    - What subjects are covered in the entrance exam?
+    - Which topics should I prepare for the entrance exam?
+    - Can you provide a list of subjects in the entrance exam?
+    - What are the main areas of focus in the entrance exam?
+- intent: entrance_exam_study_materials
+  examples: |
+    - what should i study for the entrance exam?
+    - Are there any recommended study materials for the entrance exam?
+    - What resources should I use to prepare for the entrance exam?
+    - Can you suggest some study materials for the entrance exam?
+    - Where can I find study materials for the entrance exam?
+- intent: entrance_exam_duration
+  examples: |
+    - How long does the entrance exam last?
+    - What is the duration of the entrance exam?
+    - Can you tell me the time limit for the entrance exam?
+    - How much time will I have to complete the entrance exam?
+- intent: entrance_exam_eligibility_criteria
+  examples: |
+    - What are the eligibility criteria for the entrance exam?
+    - Can you provide information about the requirements to appear in the entrance exam?
+    - What qualifications do I need to meet for the entrance exam?
+    - Are there any specific prerequisites for the entrance exam?
+- intent: entrance_exam_cutoff_scores
+  examples: |
+    - how much should i get to pass the exam?
+    - how much cutoff for btech [AIML](interested_course)?
+    - i want [AIDA](interested_course), what is the cutoff?
+    - Are there any minimum marks or cutoff scores for the entrance exam?
+    - What is the required score in the entrance exam to get admission?
+    - Can you tell me the minimum marks needed in the entrance exam?
+    - Is there a cutoff for the entrance exam?
+    - what is the cutoff for [aiml]{"entity": "interested_course", "value": "AIML"}?
+- intent: entrance_exam_mode
+  examples: |
+    - where is the entrance exam held?
+    - is the exam online?
+    - Is the entrance exam conducted online or offline?
+    - What is the mode of the entrance exam?
+    - Do I need to take the entrance exam in a physical test center?
+    - Can I take the entrance exam from home?
+- intent: entrance_exam_sample_papers
+  examples: |
+    - Are there any sample papers or practice tests available for the entrance exam?
+    - Can I access previous year's question papers of the entrance exam?
+    - Where can I find practice papers for the entrance exam?
+    - Is there a mock test available for the entrance exam?
+- intent: entrance_exam_date
+  examples: |
+    - When is the entrance exam scheduled?
+    - What is the date of the entrance exam?
+    - Can you provide me with the exam date?
+    - When will the entrance exam take place?
+- intent: entrance_exam_result_date
+  examples: |
+    - When will the entrance exam results be announced?
+    - Can you tell me the result date for the entrance exam?
+    - When can I expect the entrance exam results?
+    - when is the result out?
+    - tell me when is the entrance exam result is?
+- intent: asking_for_contact
+  examples: |
+    - What is the contact information for the college?
+    - Can you provide me with the contact details for the college?
+    - How can I get in touch with the college?
+    - I need the contact information for the college.
+    - Where can I find the contact details for the college?
+    - What is the email address for the college?
+    - Can you provide me with the college's email?
+    - How can I reach the college via email?
+    - I need the email contact for the college
+    - What is the phone number for the college?+
+    - Can you provide me with the college's contact number?
+    - How can I reach the college by phone?
+    - I need the phone contact for the college.
+    - tell me the phone number of the college?
+- intent: visiting_college
+  examples: |
+    - Where can I find information about visiting the college?
+    - Is there a visitor center at the college?
+    - What should I know before visiting the campus?
+    - Are there any specific guidelines for visiting the college?
+    - I would like to visit the college campus.
+    - Can I schedule a visit to the college?
+    - How can I arrange a tour of the college?
+    - I want to see the college in person.
+    - Is it possible to visit the campus?
+    - when can i visit the college?
+- intent: ask_about_profs
+  examples: |
+    - is the teaching okay here?
+    - who are the faculty members?
+    - list of professors in this college
+    - tell me about the professors
+    - can you provide information about the teaching staff?
+    - give me a list of the instructors
+    - who are the academic staff members?
+    - provide details about the professors in this institution
+    - which professors are associated with this college?
+    - who teaches the courses here?
+    - list all the lecturers
+    - tell me about the faculty
+    - can you provide information about the professors in this college?
+    - give me a list of the teaching staff
+    - who are the professors in charge?
+    - provide details about the academic staff members
+    - which instructors are associated with this institution?
+    - who delivers the lectures here?
+    - list all the professors
+    - tell me about the instructors
+    - can you provide information about the professors in this institution?
+- intent: Placements
+  examples: |
+    - what is the campus interview like?
+    - is the campus interview good?
+    - how is the campus interview like?
+    - what compaines come for campus interview
+    - What are the placement opportunities like?
+    - Any notable placements from the college?
+    - Which companies visit for placements?
+    - Can you tell me about the placement record?
+    - How successful are the placements?
+    - What is the average salary package?
+    - How does the placement process work?
+    - Are there internships as part of placements?
+    - How is the placement training and preparation?
+    - Average salary package offered in placements
+    - what is the campus interview?
+- intent: Admission
+  examples: |
+    - Give me the link to admission
+    - send admission link
+    - how to apply for addmission
 - synonym: AIML
   examples: |
     - aiml
+    - Artificial Intelligence & Machine Learning
+    - AI and ML
+    - AI & Machine Learning
+    - AI&ML
+    - artifical intelligence and machine learning
+    - artificial intelligence & machine learning
 - synonym: AIDA
   examples: |
-    - AiDa
-- synonym: MedSci
+    - AIDA (Hons)
+    - AIDA (Honors)
+    - aida
+    - aid
+    - aidahons
+    - aida honors
+- synonym: cybsec
   examples: |
-    - medsci
+    - Cyber Security & IoT
+    - Cyber and IoT
+    - Cyber Security and IoT
+    - Cyber & IoT
+    - cybsec&iot
+    - cyber security and iot
+- synonym: medsci
+  examples: |
+    - Medical Science
+    - Medsci
+    - medical science
+- synonym: bioinfomatics
+  examples: |
+    - Bioinformatics
+    - bioinfomatics
+    - bioinfo
+- synonym: da
+  examples: |
+    - Data Analytics
+    - DA
+    - Da
+    - dA

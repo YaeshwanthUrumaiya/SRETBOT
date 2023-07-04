@@ -28,33 +28,65 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
 - story: enquiry about arrear
   steps:
   - intent: ask_about_arrear
   - action: utter_info_about_arrear
 
-- story: Enquiry about course (basic and asked fees general and gave specific course)
-  steps: 
-  - intent: ask_about_courses
-  - action: utter_basic_info__course
-  - intent: ask_about_fees_general
-  - action: utter_ask_interested_course
-  - intent: give_interested_course
-  - action: Action_explain_specific_fees #make this an action
-
-- story: Enquiry about course (basic and asked fees general and didn't give specific course)
-  steps: 
-  - intent: ask_about_courses
-  - action: utter_basic_info__course
-  - intent: ask_about_fees_general
-  - action: utter_ask_interested_course
-  - intent: deny
-  - action: utter_general_fees 
-
-- story: enquiry about course (basic and asked fees specific)
+- story: enquiry about course and didn't want more info
   steps:
   - intent: ask_about_courses
   - action: utter_basic_info__course
+  - action: utter_ask_for_more_info_course
+  - intent: deny
+
+- story: enquiry about course and want more info and didn't give specific details
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - action: utter_ask_for_more_info_course
+  - intent: affirm
+  - action: utter_ask_interested_courseForCourse
+  - intent: deny
+  - action: Action_Give_Depth_Info
+
+- story: enquiry about course and want more info and didn't give specific details
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - action: utter_ask_for_more_info_course
+  - intent: affirm
+  - action: utter_ask_interested_courseForCourse
+  - intent: give_interested_course
+  - action: Action_Give_Depth_Info
+- story: placements
+  steps:
+  - intent: Placements
+  - action: utter_explain_Placements
+- story: ask admission
+  steps:
+  - intent: Admission
+  - action: utter_explain_Admission
+  #write the paragraph here
+  #faculty, placements, the specific courses. 
+
+- story: asked fees general and gave specific course
+  steps: 
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_courseForFees
+  - intent: give_interested_course
+  - action: Action_explain_specific_fees 
+
+- story: asked fees general and didn't give specific course
+  steps: 
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_courseForFees
+  - intent: deny
+  - action: utter_general_fees 
+
+- story: asked fees specific
+  steps:
   - intent: ask_about_fees_speific
   - action: Action_explain_specific_fees
 
@@ -102,30 +134,77 @@ stories:
   steps:
   - intent: internship_types
   - action: utter_explain_internship_general
-  
-- story: interactive_story_1
+
+- story: enquiry about entrance_exam_format
   steps:
-  - intent: ask_about_courses
-  - action: utter_basic_info__course
+  - intent: entrance_exam_format
+  - action: utter_explain_entrance_exam_format
+- story: enquiry about entrance_exam_subjects
+  steps:
+  - intent: entrance_exam_subjects
+  - action: utter_explain_entrance_exam_subjects
+- story: enquiry about entrance_exam_study_materials
+  steps:
+  - intent: entrance_exam_study_materials
+  - action: utter_explain_entrance_exam_study_materials
+- story: enquiry about entrance_exam_duration
+  steps:
+  - intent: entrance_exam_duration
+  - action: utter_explain_entrance_exam_duration
+- story: enquiry about entrance_exam_eligibility_criteria
+  steps:
+  - intent: entrance_exam_eligibility_criteria
+  - action: utter_explain_entrance_exam_eligibility_criteria
+- story: enquiry about entrance_exam_cutoff_scores
+  steps:
+  - intent: entrance_exam_cutoff_scores
+  - action: utter_explain_entrance_exam_cutoff_scores
+- story: enquiry about entrance_exam_mode
+  steps:
+  - intent: entrance_exam_mode
+  - action: utter_explain_entrance_exam_mode
+- story: enquiry about entrance_exam_sample_papers
+  steps:
+  - intent: entrance_exam_sample_papers
+  - action: utter_explain_entrance_exam_sample_papers
+- story: enquiry about entrance_exam_date
+  steps:
+  - intent: entrance_exam_date
+  - action: utter_explain_entrance_exam_date
+- story: enquiry about entrance_exam_result_date
+  steps:
+  - intent: entrance_exam_result_date
+  - action: utter_explain_entrance_exam_result_date
+- story: equiry about visiting_college
+  steps:
+  - intent: visiting_college
+  - action: utter_explain_visiting_college
+- story: equiry about asking_for_contact
+  steps:
+  - intent: asking_for_contact
+  - action: utter_explain_asking_for_contact
+- story: equiry about ask_about_profs
+  steps:
+  - intent: ask_about_profs
+  - action: utter_explain_ask_about_profs
+  
+  
+
+- story: interactive_story_2
+  steps:
   - intent: ask_about_fees_general
-  - action: utter_ask_interested_course
+  - action: utter_ask_interested_courseForFees
+  - intent: deny
+  - action: utter_general_fees
+
+- story: interactive_story_3
+  steps:
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_courseForFees
   - intent: give_interested_course
     entities:
     - interested_course: Bioinfomatics
   - action: Action_explain_specific_fees
-
-- story: interactive_story_2
-  steps:
-  - intent: ask_about_courses
-  - action: utter_basic_info__course
-  - intent: ask_about_courses
-  - intent: ask_about_fees_general
-  - action: utter_ask_interested_course
-  - intent: deny
-  - action: utter_general_fees
-
-- story: interactive_story_1
-  steps:
   - intent: internship_types
   - action: utter_explain_internship_general
   - intent: paid_internships
@@ -141,3 +220,71 @@ stories:
   - intent: nlu_fallback
   - intent: internship_assistance
   - action: utter_explain_internship_assistance
+
+- story: interactive_story_4
+  steps:
+  - intent: internship_types
+  - action: utter_explain_internship_general
+  - intent: paid_internships
+  - action: utter_explain_internship_payment
+  - intent: internship_duration
+  - action: utter_explain_internship_duration
+  - intent: ask_about_arrear
+  - intent: internship_requirements
+  - action: utter_explain_internship_requirements
+  - intent: internship_assistance
+  - action: utter_explain_internship_assistance
+  - intent: previous_companies
+  - intent: internship_competition
+  - action: utter_explain_internship_competition
+
+- story: interactive_story_1
+  steps:
+  - intent: entrance_exam_cutoff_scores
+    entities:
+    - interested_course: AIML
+  - slot_was_set:
+    - interested_course: AIML
+  - action: utter_explain_entrance_exam_cutoff_scores
+
+- story: interactive_story_1
+  steps:
+  - intent: asking_for_contact
+  - action: utter_explain_asking_for_contact
+  - intent: visiting_college
+  - action: utter_explain_visiting_college
+
+- story: interactive_story_1
+  steps:
+  - intent: Placements
+  - action: utter_explain_Placements
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - action: utter_ask_for_more_info_course
+  - intent: affirm
+  - action: utter_ask_interested_courseForCourse
+  - intent: give_interested_course
+    entities:
+    - interested_course: AIML
+  - action: Action_Give_Depth_Info
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_about_courses
+  - action: utter_basic_info__course
+  - action: utter_ask_for_more_info_course
+  - intent: affirm
+  - action: utter_ask_interested_courseForCourse
+  - intent: give_interested_course
+    entities:
+    - interested_course: AIML
+  - slot_was_set:
+    - interested_course: AIML
+  - action: Action_Give_Depth_Info
+  - intent: ask_about_fees_general
+  - action: utter_ask_interested_courseForFees
+  - intent: nlu_fallback
+  - intent: give_interested_course
+    entities:
+    - interested_course: medical science
+  - action: Action_explain_specific_fees

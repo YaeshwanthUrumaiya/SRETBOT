@@ -1,12 +1,26 @@
 version: '3.1'
 intents:
+- Admission
+- Placements
 - affirm
 - ask_about_arrear
 - ask_about_courses
 - ask_about_fees_general
 - ask_about_fees_speific
+- ask_about_profs
+- asking_for_contact
 - bot_challenge
 - deny
+- entrance_exam_cutoff_scores
+- entrance_exam_date
+- entrance_exam_duration
+- entrance_exam_eligibility_criteria
+- entrance_exam_format
+- entrance_exam_mode
+- entrance_exam_result_date
+- entrance_exam_sample_papers
+- entrance_exam_study_materials
+- entrance_exam_subjects
 - give_interested_course
 - goodbye
 - greet
@@ -21,6 +35,7 @@ intents:
 - mood_unhappy
 - paid_internships
 - previous_companies
+- visiting_college
 entities:
 - interested_course
 slots:
@@ -32,7 +47,7 @@ slots:
       entity: interested_course
 responses:
   utter_greet:
-  - text: Hey! How can I help you?
+  - text: Hello there! I am Mui, An AI powered Chatbot from SRET! How can I be of help?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -43,44 +58,86 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am a bot built by Yaeshwanth Urumaiya of BTech AIML (2022-2026) using a Framework called Rasa.
+  utter_ask_for_more_info_course:
+  - text: Do you want more specific details?
   utter_info_about_arrear:
   - text: Don't worry if you have an arrear or two. You can clear them by next year. As of for when to clear the said arrears. If you have an arrear from an Odd Semester; you have to clear it on an odd semester. If the arrea was in even semester; then you have to clear it on even semester. As of for the exact dates, it will announced by the prof.
   utter_basic_info__course:
   - text: We offer 4 Courses in BTech; AIML, AIDA, CybSec&IOT, MedicalSci. In BSc, there are 3; AIDA(HONS), Bioinfomatics, DA.
-  utter_ask_interested_course:
+  utter_ask_interested_courseForFees:
+  - text: Do you have any specific course in mind?
+  utter_ask_interested_courseForCourse:
   - text: Do you have any specific course in mind?
   utter_general_fees:
-  - text: 'btech: 2,50,000 Rs per year. The course is for 4 Years ; bsc: 75,000 Rs per year. The course 3 years (4 years if hons)'
+  - text: 'BTech: 2,50,000 Rs per year. The course is for 4 Years ; BSc: 75,000 Rs per year. The course 3 years (4 years if hons)'
   utter_explain_internship_general:
-  - text: reply to intent_internship_types
+  - text: There's two types of internships available; Internal and External. Internal is the students doing projects under the professors in the college to build their resume and External is the students doing project/work under a company. There will be internship period every year and it is wish to properly split them up into internals and externals and plan it beforehand to effective build both your resume and your work experience.
   utter_explain_internship_payment:
-  - text: reply to intent_internship_paid
+  - text: Internal internships are unpaid whereas External internship can have stipends; which depends on company that the student is interning at and the student's skillset.
   utter_explain_internship_duration:
-  - text: reply to intent_internship_duration
+  - text: There will be a quarter of an year completely dedicated to internships; Which quarter that is being allocated depends on which year the students are studying.
   utter_explain_previous_companies:
-  - text: reply to intent_previous_companies
+  - text: 'Zoro, DevRev, Smartail and Vertace are one of the many companines that our students have interned at; And in terms of Internal, We have developed various projects in industries/fields (choosen by the students). As a matter of fact, this very chatbot has been built a student during the first year internal internship.'
   utter_explain_internship_requirements:
-  - text: reply to intent_internship_requirements
+  - text: Every student under the wing of SRET is guaranteed internal internships. Whereas External internships depends on the skillset of the student and what they can provide to the company in question.
   utter_explain_internship_assistance:
-  - text: reply to intent_internship_assistance
+  - text: As of Internal internships, Our professors will personally take time to help the students develops projects that they can add onto their resume. As of Externals, We have parterned up with Internshala.com where they can choose their company of choice and we make the application process easier and more accessible for upcoming engineers.
   utter_explain_internship_programs:
-  - text: reply to intent_internship_programs
+  - text: We provide Internal internship options to all our students where they can explore new domains and develop real time applications. In terms of External, If there are any ongoing programs at the time of the internship period, we help them students enroll in them and provide all of the required resources to make the process easier.
   utter_explain_internship_timing:
-  - text: reply to intent_internship_timing
+  - text: There will be a quarter of an year completely dedicated to internships; Which quarter that is being allocated depends on which year the students are studying.
   utter_explain_internship_competition:
-  - text: reply to intent_internship_competition
+  - text: As of External, it may vary for company to company. But in terms of Internal, every student is given equal opportunity to shine.
+  utter_explain_entrance_exam_format:
+  - text: Since the SRETEE 2023-34 has completed. The marking scheme and blue print/formate will be updated soon.
+  utter_explain_entrance_exam_subjects:
+  - text: Since the SRETEE 2023-34 has completed. The portions will be updated soon.
+  utter_explain_entrance_exam_study_materials:
+  - text: Since the SRETEE 2023-34 has completed. The study materials list will be updated soon.
+  utter_explain_entrance_exam_duration:
+  - text: Since the SRETEE 2023-34 has completed. The exam duration will be updated soon.
+  utter_explain_entrance_exam_eligibility_criteria:
+  - text: Since the SRETEE 2023-34 has completed. The eligiblitity criteria for the exam will be updated soon.
+  utter_explain_entrance_exam_cutoff_scores:
+  - text: Since the SRETEE 2023-34 has completed. The cutoff will be updated soon.
+  utter_explain_entrance_exam_mode:
+  - text: Since the SRETEE 2023-34 has completed. The exam is in offline mode. 
+  utter_explain_entrance_exam_sample_papers:
+  - text: Since the SRETEE 2023-34 has completed. The exame sample papers will be updated soon.
+  utter_explain_entrance_exam_date:
+  - text: Since the SRETEE 2023-34 has completed. The dates of the entrance exam will be updated soon.
+  utter_explain_entrance_exam_result_date:
+  - text: Since the SRETEE 2023-34 has completed. The result date will be updated soon.
+  utter_explain_visiting_college:
+  - text: the visiting hours are between 3 and 4pm (2nd and 3rd saturday holidays)
+  utter_explain_asking_for_contact:
+  - text: 'Manager: Mr. N. Chandrasekar Ph: +91 7824-896-500 E-Mail: manager.administration@sret.edu.in; Admission Office: Ph: +91 7824-896-500 E-Mail:admissions@sret.edu.in'
+  utter_explain_ask_about_profs:
+  - text: click here sret.edu.in/Faculty.html; Personal opinion -> The teaching is pretty good. They start from the basics in the first year and slowly build on that foundation you gained in that first year. They give you time and guidance for you to build your projects during internship. As a matter of fact, I was built by a first year student in his internship period. It is surely worth the trouble of studying discrete mathematics for 3 years to come.
+  utter_explain_Placements:
+  - text: TCS, HCLTech, Deloitte, LTIMindTree are one of the many companies that our students were placed at. But to be honest, The industry of the Artificial Intelligence & Machine Learning is growing rapdily. It is hard to pinpoint on a number of the current payscale of the industry as this year's payscale will be widely different from next year's.
+  utter_explain_Admission:
+  - text: Go to link https://www.sret.edu.in/Pros.html
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- utter_explain_internship_general
+- utter_basic_info__course
+- Action_Give_Depth_Info
+- utter_ask_interested_courseForCourse
+- utter_ask_for_more_info_course
+- Action_explain_specific_fees
+- utter_ask_interested_courseForFees
+- utter_explain_Placements
+- utter_explain_visiting_college
+- utter_explain_asking_for_contact
+- utter_explain_entrance_exam_cutoff_scores
 - utter_explain_internship_competition
+- utter_explain_internship_general
+- utter_explain_internship_requirements
 - utter_explain_internship_duration
-- utter_explain_previous_companies
 - utter_explain_internship_assistance
 - utter_explain_internship_payment
-- utter_ask_interested_course
-- Action_explain_specific_fees
+- utter_explain_previous_companies
 - utter_general_fees
-- utter_basic_info__course

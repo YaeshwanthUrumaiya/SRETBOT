@@ -2,12 +2,46 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+# - rule: Say goodbye anytime the user says goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+
+# - rule: Say specific course and deny
+#   steps:
+#   - intent: ask_about_courses
+#   - action: utter_basic_info__course
+#   - action: utter_ask_for_more_info_course
+#   - intent: affirm
+#   - action: utter_ask_interested_course
+#   - intent: deny
+#   - action: Action_Give_Depth_Info
+
+# - rule: Say specific course and gave
+#   steps:
+#   - intent: ask_about_courses
+#   - action: utter_basic_info__course
+#   - action: utter_ask_for_more_info_course
+#   - intent: affirm
+#   - action: utter_ask_interested_course
+#   - intent: give_interested_course
+#   - action: Action_Give_Depth_Info
+
+# - rule: say fees and gave
+#   steps:
+#   - intent: ask_about_fees_general
+#   - action: utter_ask_interested_course
+#   - intent: give_interested_course
+#   - action: Action_explain_specific_fees 
+
+# - rule: say fees and deny
+#   steps:
+#   - intent: ask_about_fees_general
+#   - action: utter_ask_interested_course
+#   - intent: deny
+#   - action: utter_general_fees 
