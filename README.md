@@ -16,6 +16,10 @@ When I first took up on this project I was lacking in Knowledge about Machine le
 
 The Presentation and the final Report of the Internship is attached as well!
 
+[Output Video; NOTE: This was recoreding during development)](https://drive.google.com/file/d/13WzXdx5rM3LHGaTxg9qVCgm25bP7xv1Z/view?usp=sharing)
+
+[Kindly refer to this link if the Output Video link isn't working in the presentation](https://docs.google.com/file/d/1RiYb2GOeZEh2VomE7a-9csTTMGmZXqKI/)
+
 ## Sources:
 [Rasa Learning Center](https://learning.rasa.com)
 [RASA General Documation](https://rasa.com/docs/)
